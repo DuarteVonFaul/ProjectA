@@ -97,7 +97,8 @@ public class TranstefRepository extends BasicRepository {
                     "where tef_canc='N' and tef_exc='N'\n" +
                     "and tef_valo<>0 and tef_rede<>'' and tef_nsu<>'0' and tef_loja= ?\n" +
                     "and tef_dmov = ?\n" +
-                    "and not exists(select * from tb_transtef f where f.tef_loja=t.tef_loja and f.tef_caix=t.tef_caix and\n" +
+
+                    "and not exists(select * from tb_transtef f where f.tef_conciliacao = 'N' and f.tef_loja=t.tef_loja and f.tef_caix=t.tef_caix and\n" +
                     "f.tef_rede=t.tef_rede and f.tef_dmov=t.tef_dmov and f.tef_canc='S' and f.tef_nsuc=t.tef_nsu and f.tef_nsuc<>'0')\n" +
                     "and adc_ativo='S' and adc_rede=rc_codi and rc_ativo='S' and tef_adm<>'' and\n" +
                     "upper(trim(tef_adm)) like iif(position('==',adc_desctef)=0,trim(adc_desctef)||'%',trim(substring(adc_desctef from 1 for position('==',adc_desctef)-1)))\n" +

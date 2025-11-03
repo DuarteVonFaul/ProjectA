@@ -1,26 +1,32 @@
 import { useState } from 'react'
-
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './shared/components/layout/Navbar';
 
 import './App.css'
+import ConfiguracaoScreen from './screen/ConfiguracaoScreen';
+import ConciliacoesScreen from './screen/ConciliacoesScreen';
+import ServiceDashboard from './screen/ServiceDashboardScree,';
+import { ServicesProvider } from './shared/context/ServicesContext';
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+   <div className="min-h-screen bg-gray-100">
+      <ServicesProvider>
+        <Router>
+          <Navbar />
+          
+          <div className="container mx-auto p-4 md:p-8">
+            <Routes>
+              <Route path="/" element={<ConciliacoesScreen />}/>
+              <Route path="/conciliacoes" element={<ConciliacoesScreen />}  />
+              <Route path="/integrador"  element={<ServiceDashboard></ServiceDashboard>} />
+              <Route path="/configuracao" element={<ConfiguracaoScreen />} />
+            </Routes>
+          </div>
+        </Router>
+      </ServicesProvider>
+    </div>
   )
 }
 
