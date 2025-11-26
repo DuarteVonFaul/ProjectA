@@ -5,7 +5,7 @@ import Navbar from './shared/components/layout/Navbar';
 import './App.css'
 import ConfiguracaoScreen from './screen/ConfiguracaoScreen';
 import ConciliacoesScreen from './screen/ConciliacoesScreen';
-import ServiceDashboard from './screen/ServiceDashboardScree,';
+import ServiceDashboard from './screen/ServiceDashboardScreen';
 import { ServicesProvider } from './shared/context/ServicesContext';
 
 function App() {

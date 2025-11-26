@@ -21,7 +21,6 @@ function ServiceDashboard(): React.JSX.Element {
 
   return (
     <div className="dashboard-container">
-      <h2>Painel de Serviços (com Contexto e TypeScript)</h2>
       <table className="services-table">
         <thead>
           <tr>
